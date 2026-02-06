@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Be My Valentine</title>
+    <link rel="stylesheet" href="css/valentine.css" />
+  </head>
+  <body>
+    <div id="valentineQuestion"><b>Will you be my valentine?</b></div>
+    <button class="answerButton" onclick="location.href='thankyou.html'">
+      Yes ❤️
+    </button>
+    <button class="answerButton" id="noButton">I no no wanna o(╥﹏╥)o</button>
+    <br />
+    <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExcWM3cDRvZ3N0ZnB5eDJyMGczeWNqNzNwYmgxeXFvNXByZWRseGhwdCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/MDJ9IbxxvDUQM/giphy.gif" alt="cat asking question" class="responsive" />
+    
+    <script>
+      document
+        .getElementById("noButton")
+        .addEventListener("click", function () {
+          var yesButton = document.querySelector(
+            'button[onclick*="thankyou.html"]'
+          );
+          var currentFontSize = parseInt(
+            window.getComputedStyle(yesButton).fontSize
+          );
+          var newFontSize = currentFontSize * 1.5;
+          yesButton.style.fontSize = newFontSize + "px";
+
+          var noButton = document.getElementById("noButton");
+          var randomX = Math.floor(Math.random() * 80) + 1;
+          var randomY = Math.floor(Math.random() * 80) + 1;
+          noButton.style.position = "absolute";
+          noButton.style.left = randomX + "%";
+          noButton.style.top = randomY + "%";
+        });
+    </script>
+  </body>
+</html>

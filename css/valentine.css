@@ -1,0 +1,88 @@
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 100vh;
+  background: linear-gradient(135deg, #ffeef8 0%, #ffe0f0 100%);
+  font-family: 'Comic Sans MS', cursive, sans-serif;
+  margin: 0;
+  padding: 20px;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+#valentineQuestion {
+  font-size: 50px;
+  color: #ff1493;
+  text-align: center;
+  margin-bottom: 30px;
+  text-shadow: 2px 2px 4px rgba(255, 105, 180, 0.3);
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+}
+
+.answerButton {
+  padding: 15px 40px;
+  margin: 10px;
+  font-size: 24px;
+  font-weight: bold;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 5px 15px rgba(255, 105, 180, 0.3);
+  font-family: 'Comic Sans MS', cursive, sans-serif;
+}
+
+button[onclick*="thankyou.html"] {
+  background: linear-gradient(135deg, #ff69b4, #ff1493);
+  color: white;
+}
+
+button[onclick*="thankyou.html"]:hover {
+  transform: scale(1.1);
+  box-shadow: 0 8px 20px rgba(255, 105, 180, 0.6);
+}
+
+#noButton {
+  background: linear-gradient(135deg, #ddd, #bbb);
+  color: #666;
+  position: relative;
+}
+
+#noButton:hover {
+  background: linear-gradient(135deg, #ccc, #aaa);
+}
+
+.responsive {
+  width: 300px;
+  height: auto;
+  max-width: 90%;
+  margin-top: 30px;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(255, 105, 180, 0.2);
+}
+
+@media (max-width: 600px) {
+  #valentineQuestion {
+    font-size: 32px;
+  }
+  
+  .answerButton {
+    padding: 12px 30px;
+    font-size: 18px;
+  }
+  
+  .responsive {
+    width: 250px;
+  }
+}
