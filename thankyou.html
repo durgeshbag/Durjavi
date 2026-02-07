@@ -4,119 +4,72 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Thank You! ❤️</title>
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:wght@400;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
     <style>
+      :root{
+        --accent: #ff2a7a;
+        --light-pink: #fff0f6;
+        --muted: #62404a;
+      }
+
       body {
         display: flex;
         justify-content: center;
         align-items: center;
         flex-direction: column;
         height: 100vh;
-        background: linear-gradient(135deg, #ff69b4, #ff1493);
-        font-family: 'Comic Sans MS', cursive, sans-serif;
+        background: linear-gradient(180deg, #ffe6f0 0%, #ffd7ea 50%, #fff6fb 100%);
+        font-family: 'Poppins', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
         margin: 0;
-        padding: 20px;
+        padding: 24px;
         overflow: hidden;
+        color: var(--muted);
       }
 
-      .hearts {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        pointer-events: none;
-        z-index: 1;
-      }
-
-      .heart {
-        position: absolute;
-        font-size: 30px;
-        animation: float 4s infinite ease-in-out;
-        opacity: 0.8;
-      }
-
-      @keyframes float {
-        0%, 100% {
-          transform: translateY(100vh) rotate(0deg);
-          opacity: 0;
-        }
-        10% {
-          opacity: 0.8;
-        }
-        90% {
-          opacity: 0.8;
-        }
-      }
+      .hearts { position: fixed; top:0; left:0; width:100%; height:100%; pointer-events:none; z-index:1 }
 
       .container {
         position: relative;
         z-index: 2;
         text-align: center;
         background: white;
-        padding: 60px;
-        border-radius: 30px;
-        box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
-        max-width: 600px;
-        width: 90%;
+        padding: 48px;
+        border-radius: 26px;
+        box-shadow: 0 24px 64px rgba(0,0,0,0.12);
+        max-width: 680px;
+        width: 92%;
       }
 
       h1 {
-        color: #ff1493;
-        font-size: 3em;
-        margin-bottom: 20px;
-        animation: bounce 1s infinite;
+        color: var(--accent);
+        font-family: 'Playfair Display', serif;
+        font-size: 3.2em;
+        margin-bottom: 8px;
+        letter-spacing: 0.4px;
       }
 
-      @keyframes bounce {
-        0%, 20%, 50%, 80%, 100% {
-          transform: translateY(0);
-        }
-        40% {
-          transform: translateY(-20px);
-        }
-        60% {
-          transform: translateY(-10px);
-        }
-      }
-
-      p {
-        font-size: 1.5em;
-        color: #ff69b4;
-        margin: 20px 0;
+      p.lead {
+        font-size: 1.4em;
+        color: var(--accent);
+        margin: 8px 0 22px 0;
       }
 
       img {
-        width: 300px;
+        width: 360px;
         height: auto;
-        max-width: 90%;
-        margin: 30px 0;
-        border-radius: 20px;
-        box-shadow: 0 10px 30px rgba(255, 105, 180, 0.3);
+        max-width: 86%;
+        margin: 22px 0;
+        border-radius: 14px;
+        box-shadow: 0 12px 36px rgba(255,120,170,0.12);
       }
 
-      .message {
-        font-size: 1.2em;
-        color: #666;
-        margin-top: 20px;
-        line-height: 1.6;
-      }
+      .message { font-size: 1.1em; color: #7a4a58; margin-top: 16px; line-height: 1.6 }
 
       @media (max-width: 600px) {
-        .container {
-          padding: 40px 30px;
-        }
-        
-        h1 {
-          font-size: 2em;
-        }
-        
-        p {
-          font-size: 1.2em;
-        }
-        
-        img {
-          width: 250px;
-        }
+        .container { padding: 28px }
+        h1 { font-size: 2em }
+        p.lead { font-size: 1.1em }
+        img { width: 260px }
       }
     </style>
   </head>
@@ -125,7 +78,8 @@
     
     <div class="container">
       <h1>Yay! 🎉</h1>
-      <p>You said YES! ❤️</p>
+      <p>I knew it 🥰</p>
+      <p class="lead">You said YES! ❤️</p>
       <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExbGtwdnZ0anh0enZreWQzdWpsc2V1OHl6NGFocnR5N2lsMXhsenZsZyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/UVk5yzljef0kGiayL1/giphy.gif" alt="Happy celebration">
       <div class="message">
         <p>I'm so happy! Can't wait to spend Valentine's Day with you! 💕</p>

@@ -1,88 +1,120 @@
+/* Romantic stylesheet: Playfair headings, Great Vibes name, Poppins body */
+:root{
+  --pink-1: #fff5f8;
+  --pink-2: #ffd9e8;
+  --accent: #ff2a7a;
+  --soft-accent: #ff73a8;
+  --muted-text: #5b3040;
+}
+
 body {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  height: 100vh;
-  background: linear-gradient(135deg, #ffeef8 0%, #ffe0f0 100%);
-  font-family: 'Comic Sans MS', cursive, sans-serif;
+  min-height: 100vh;
+  background: radial-gradient(800px 350px at 50% 8%, rgba(255,200,230,0.35), transparent 30%), linear-gradient(180deg, var(--pink-1) 0%, var(--pink-2) 60%, #fff0f6 100%);
+  font-family: 'Poppins', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+  color: var(--muted-text);
   margin: 0;
-  padding: 20px;
+  padding: 40px 24px;
   box-sizing: border-box;
   overflow: hidden;
+  position: relative;
+}
+
+/* gentle vignette */
+body::after{
+  content: '';
+  pointer-events: none;
+  position: absolute;
+  inset: 0;
+  box-shadow: inset 0 40px 120px rgba(255,150,190,0.04), inset 0 -40px 120px rgba(255,150,190,0.03);
 }
 
 #valentineQuestion {
-  font-size: 50px;
-  color: #ff1493;
+  font-family: 'Playfair Display', serif;
+  font-size: 56px;
+  color: var(--accent);
   text-align: center;
-  margin-bottom: 30px;
-  text-shadow: 2px 2px 4px rgba(255, 105, 180, 0.3);
-  animation: pulse 2s infinite;
+  margin-bottom: 36px;
+  text-shadow: 0 6px 18px rgba(255,100,160,0.10);
+  animation: pulse 3s infinite;
+  letter-spacing: 0.6px;
+  line-height: 1.05;
+}
+
+#valentineQuestion span{display:block}
+
+#nameText {
+  font-family: 'Great Vibes', cursive;
+  font-size: 72px;
+  font-weight: 400;
+  color: #d80f6a;
+  margin-top: 6px;
+  display: inline-block;
+  text-shadow: 0 6px 18px rgba(216,15,106,0.06);
 }
 
 @keyframes pulse {
-  0%, 100% {
-    transform: scale(1);
-  }
-  50% {
-    transform: scale(1.05);
-  }
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.03); }
+}
+
+@keyframes heartBeat {
+  0%, 100% { transform: scale(1); }
+  25% { transform: scale(1.18); }
+  50% { transform: scale(1); }
+  75% { transform: scale(1.12); }
 }
 
 .answerButton {
-  padding: 15px 40px;
-  margin: 10px;
-  font-size: 24px;
-  font-weight: bold;
+  padding: 14px 44px;
+  margin: 12px;
+  font-size: 20px;
+  font-weight: 600;
   border: none;
-  border-radius: 50px;
+  border-radius: 40px;
   cursor: pointer;
-  transition: all 0.3s ease;
-  box-shadow: 0 5px 15px rgba(255, 105, 180, 0.3);
-  font-family: 'Comic Sans MS', cursive, sans-serif;
+  transition: transform 220ms cubic-bezier(.2,.9,.3,1), box-shadow 220ms;
+  box-shadow: 0 10px 30px rgba(255,120,170,0.12);
+  font-family: 'Poppins', sans-serif;
 }
 
 button[onclick*="thankyou.html"] {
-  background: linear-gradient(135deg, #ff69b4, #ff1493);
-  color: white;
+  background: linear-gradient(135deg, #ff6fb3 0%, #ff2a82 100%);
+  color: #fff;
+  padding-top: 16px;
+  padding-bottom: 16px;
 }
 
 button[onclick*="thankyou.html"]:hover {
-  transform: scale(1.1);
-  box-shadow: 0 8px 20px rgba(255, 105, 180, 0.6);
+  transform: translateY(-4px) scale(1.02);
+  box-shadow: 0 18px 40px rgba(255,80,140,0.18);
 }
 
 #noButton {
-  background: linear-gradient(135deg, #ddd, #bbb);
+  background: linear-gradient(180deg, #efefef 0%, #dcdcdc 100%);
   color: #666;
   position: relative;
 }
 
 #noButton:hover {
-  background: linear-gradient(135deg, #ccc, #aaa);
+  transform: translateY(-3px);
 }
 
 .responsive {
-  width: 300px;
+  width: 340px;
   height: auto;
   max-width: 90%;
-  margin-top: 30px;
-  border-radius: 20px;
-  box-shadow: 0 10px 30px rgba(255, 105, 180, 0.2);
+  margin-top: 32px;
+  border-radius: 18px;
+  box-shadow: 0 18px 48px rgba(255,120,170,0.12);
 }
 
 @media (max-width: 600px) {
-  #valentineQuestion {
-    font-size: 32px;
-  }
-  
-  .answerButton {
-    padding: 12px 30px;
-    font-size: 18px;
-  }
-  
-  .responsive {
-    width: 250px;
-  }
+  #valentineQuestion { font-size: 36px; }
+  #nameText { font-size: 46px; }
+  .answerButton { padding: 12px 28px; font-size: 18px; }
+  .responsive { width: 260px; }
 }
